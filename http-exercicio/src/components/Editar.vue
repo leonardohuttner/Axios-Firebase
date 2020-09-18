@@ -7,7 +7,7 @@
         <b-input type="text" placeholder="Username" v-model="usuario.nome"></b-input>
         <b-input type="text" placeholder="Password" v-model="usuario.senha"></b-input>
         <b-button variant="success" @click="salvar">Salvar</b-button>
-        <b-button variant="warning" @click="obterUsuarios">Editar</b-button>
+        <b-button variant="warning" @click="obterUsuarios" class="ml-2">Obter usuarios</b-button>
       </b-card>
       <b-list-group>
         <b-list-group-item v-for="(usuario,id) in usuarios" :key="id">
