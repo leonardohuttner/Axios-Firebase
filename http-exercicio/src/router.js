@@ -4,6 +4,7 @@ import Cadastro from './components/Cadastro.vue'
 import Profile from './components/Profile.vue'
 import UsuarioEditar from './components/Roll.vue'
 import Validacao from './components/Validacao.vue'
+import SignUp from './components/SignUp.vue'
 
 Vue.use(Router)
 
@@ -22,5 +23,8 @@ export default new Router({
     },{
         path: '/validacao',
         component: Validacao
+    },{
+        path: '/signup',
+        component: SignUp
     }]
 })
