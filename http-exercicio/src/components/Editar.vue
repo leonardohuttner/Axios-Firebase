@@ -3,6 +3,7 @@
     
     <b-card class="mt-2" >
       <b-card>
+        <b-alert show dismissible :variant='mensagem.tipo' v-for='mensagem in mensagens' :key='mensagem.texto'>{{mensagem.texto}}</b-alert>
         <b-input type="text" placeholder="Username" v-model="usuario.nome"></b-input>
         <b-input type="text" placeholder="Password" v-model="usuario.senha"></b-input>
         <b-button variant="success" @click="salvar">Salvar</b-button>
@@ -31,6 +32,7 @@
 export default {
   data() {
     return {
+      mensagens:[],
       usuarios: [],
       usuario:{
                 nome:'',
@@ -41,6 +43,25 @@ export default {
     };
   },
   methods: {
+    salvar(){
+      const metodo = this.id ? 'patch' : 'post'
+      const finalUrl = this.id ? `/${this.id}.json` : '.json'
+      this.$http[metodo](`/usuarios/${finalUrl}`,this.usuario)
+        .then(() => this.limpar())
+            .then(() => {
+                this.mensagens.push({
+                    texto:'Sucess',
+                    tipo:'success'
+                })
+                // eslint-disable-next-line
+            }).catch(err => {
+                this.mensagens.push({
+                    texto:'Failed',
+                    tipo:'danger'
+                })
+            })
+
+    },
     carregar(id){
         this.id = id
         this.usuario = {...this.usuarios[id]}
