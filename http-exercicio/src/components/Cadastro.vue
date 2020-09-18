@@ -1,10 +1,10 @@
 <template>
     
-  <div class="login">
+  <div class="Cadastro">
 
       <b-alert show dismissible :variant='mensagem.tipo' v-for='mensagem in mensagens' :key='mensagem.texto'>{{mensagem.texto}}</b-alert>
       <hr>
-      <h2>Login:</h2>
+      <h2>Cadastro:</h2>
     <b-form-group label='Username:'>
       <b-card>
         <b-input type="text" placeholder='Username' v-model="usuario.nome"></b-input>

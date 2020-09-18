@@ -1,8 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Login from './components/Login.vue'
+import Cadastro from './components/Cadastro.vue'
 import Profile from './components/Profile.vue'
 import UsuarioEditar from './components/Roll.vue'
+import Validacao from './components/Validacao.vue'
 
 Vue.use(Router)
 
@@ -10,7 +11,7 @@ export default new Router({
     mode:'history',
     routes:[{
         path: '/',
-        component: Login
+        component: Cadastro
     },{
         path: '/page/',
         component: Profile,
@@ -18,5 +19,8 @@ export default new Router({
     },{
         path: '/edit',
         component: UsuarioEditar
+    },{
+        path: '/validacao',
+        component: Validacao
     }]
 })

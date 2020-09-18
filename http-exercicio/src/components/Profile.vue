@@ -1,7 +1,7 @@
 <template>
   <div class="profile">
     <hr />
-    <h1>Profiles:</h1>
+    <h1>Cadastros:</h1>
 
     <b-button variant="primary" @click="toHome">Back</b-button>
 
