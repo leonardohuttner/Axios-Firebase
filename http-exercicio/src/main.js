@@ -5,13 +5,9 @@ import router from './router.js'
 
 import './plugins/bootstrap-vue'
 import './plugins/axios'
+import firebase from 'firebase'
 
 Vue.config.productionTip = false
-
-new Vue({
-  router,
-  render: h => h(App),
-}).$mount('#app')
 
 var firebaseConfig = {
   apiKey: "AIzaSyB7_MPqjz1CZ8qGuKd0C63XkZTTnjPHIDs",
@@ -24,5 +20,12 @@ var firebaseConfig = {
   measurementId: "G-YHCJCR47SE"
 };
 // Initialize Firebase
+// eslint-disable-next-line
 firebase.initializeApp(firebaseConfig);
+// eslint-disable-next-line
 firebase.analytics();
+new Vue({
+  router,
+  render: h => h(App),
+}).$mount('#app')
+
